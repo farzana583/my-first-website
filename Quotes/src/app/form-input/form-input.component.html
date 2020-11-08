@@ -1,0 +1,82 @@
+<!-- <form class="col" (ngSubmit)='submitQuote()' #quoteForm ='ngForm' bg-dark text-white>
+    <div class="form-group mt-5">
+        <label for="name">
+           <p>Your Name</p> 
+        </label>
+        <input type="text" placeholder="Your Name" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel'>
+    </div>
+    <div class="form-group">
+        <label for="title">
+            Quote Title
+        </label>
+        <input type="text" placeholder="Quote Title" required class="form-control" id="title" [(ngModel)]="newQuote.title" name="title" #title='ngModel' >
+    </div>
+    <div class="form-group mt-5">
+        <label for="quote">
+            Quote
+        </label>
+        <input type="text" placeholder="Quote" required class="form-control" id="quote" [(ngModel)]="newQuote.quote" name="quote" #quote='ngModel' >
+    </div>
+    <div class="form-group mt-5">
+        <label for="author">
+            Authors Name
+        </label>
+        <input type="text" placeholder="Authors Name" required class="form-control" id="author" [(ngModel)]="newQuote.author" name="author" #author='ngModel'>
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-success" >Add</button>
+    </div>
+</form> -->
+<div class="container-fluid">
+    <h2 class="text-center">Create a new Quote</h2>
+    <hr>
+    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+        <div class="form-group">
+
+            <label for="name">Your Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel'
+                required>
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                <p>Name is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label for="complete">Quote Title</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.title" name="title" #title='ngModel'
+                required>
+            <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
+                <p>Title is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label for="description">Quote</label>
+            <textarea class="form-control" id="description" rows="4" [(ngModel)]="newQuote.quote" name="Quote"
+                #quote="ngModel" required></textarea>
+            <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+                <p>Description is required</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <label for="Author">Author's name</label>
+            <input type="text" class="form-control" id="author" [(ngModel)]="newQuote.author" name="Author's name"
+                #author="ngModel" required>
+            <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+                <p>Author is required</p>
+            </div>
+
+        </div>
+        <div class="form-group">
+
+            <label for="complete">Completion</label>
+            <input type='date' id="complete" [(ngModel)]="newQuote.date" name="completeDate" #date="ngModel" required>
+            <div [hidden]="date.valid || date.pristine" class="alert alert-danger">
+                <p>Date is required</p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Add Goal</button>
+    </form>
+</div>
